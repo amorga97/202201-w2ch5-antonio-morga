@@ -4,7 +4,7 @@ export const checkRows = (firstCell, secondCell) => {
         (firstCell.column - secondCell.column === 1 ||
             firstCell.column - secondCell.column === -1)
     ) {
-        firstCell.neighbors += 1;
-        secondCell.neighbors += 1;
+        return true;
     }
+    return false;
 };

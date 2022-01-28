@@ -3,10 +3,21 @@ import { checkRows } from './check-rows.js';
 import { checkDiagonal } from './check-diagonal.js';
 
 export const obtainNeighbors = (livingCells) => {
-    for (let i = 0; i < livingCells.length - 1; i++) {
-        checkRows(livingCells[i], livingCells[i + 1]);
-        checkColumns(livingCells[i], livingCells[i + 1]);
-        checkDiagonal(livingCells[i], livingCells[i + 1]);
+    const cellsAndNeighbors = [...livingCells];
+    for (let i = 0; i < cellsAndNeighbors.length - 1; i += 1) {
+        if (checkRows(cellsAndNeighbors[i], cellsAndNeighbors[i + 1])) {
+            cellsAndNeighbors[i].neighbors += 1;
+            cellsAndNeighbors[i + 1].neighbors += 1;
+        }
+
+        if (checkColumns(cellsAndNeighbors[i], cellsAndNeighbors[i + 1])) {
+            cellsAndNeighbors[i].neighbors += 1;
+            cellsAndNeighbors[i + 1].neighbors += 1;
+        }
+        if (checkDiagonal(cellsAndNeighbors[i], cellsAndNeighbors[i + 1])) {
+            cellsAndNeighbors[i].neighbors += 1;
+            cellsAndNeighbors[i + 1].neighbors += 1;
+        }
     }
-    return livingCells;
+    return cellsAndNeighbors;
 };

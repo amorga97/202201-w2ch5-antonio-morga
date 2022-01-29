@@ -1,5 +1,4 @@
-import { actOnAliveCells } from './act-on-alive-cells.js';
-import { actOnDeadCells } from './act-on-dead-cells.js';
+import { actOnAliveCells, actOnDeadCells } from './act-on-cells.js';
 
 export const updateGrid = (aliveCellsArray, deadCellsArray, currentgrid) => {
     const grid = currentgrid;

@@ -1,6 +1,5 @@
-import { findAliveCells } from './find-alive-cells.js';
+import { findAliveCells, findDeadCells } from './find-cells.js';
 import { obtainNeighbors } from './assign-neighbors.js';
-import { findDeadCells } from './find-dead-cells.js';
 import { updateGrid } from './update-grid.js';
 
 export const nextGen = (grid) => {

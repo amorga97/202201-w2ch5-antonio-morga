@@ -1,23 +1,8 @@
-import { liveCells } from './find-alive-cells.js';
-import { obtainNeighbors } from './assign-neighbors.js';
-import { findDeadCells } from './find-dead-cells.js';
-import { updateGrid } from './update-grid.js';
+import { Grid } from './grid-class.js';
+import { nextGen } from './next-generation.js';
 
-let grid = {
-    array: [
-        [0, 0, 0, 0, 0],
-        [0, 0, 1, 0, 0],
-        [0, 0, 1, 0, 0],
-        [0, 0, 1, 0, 0],
-        [0, 0, 0, 0, 0],
-    ],
-};
+export const gridSize = 6;
+let grid = new Grid(gridSize);
 
-let livingCellsArray = liveCells(grid.array);
-let deadCellsArray = findDeadCells(grid.array);
-livingCellsArray = obtainNeighbors(livingCellsArray);
-deadCellsArray = obtainNeighbors(
-    liveCells(grid.array),
-    findDeadCells(grid.array)
-);
-grid = updateGrid(livingCellsArray, deadCellsArray);
+grid = nextGen(grid);
+console.log(grid);

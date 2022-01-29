@@ -1,8 +1,8 @@
 export const actOnDeadCells = (deadCellsArray) => {
     const positionsToUpdate = [];
-    for (let i = 0; i < deadCellsArray.length; i += 1) {
-        if (deadCellsArray[i].neighbors === 3) {
-            positionsToUpdate.push(deadCellsArray[i]);
+    for (const element of deadCellsArray) {
+        if (element.neighbors === 3) {
+            positionsToUpdate.push(element);
         }
     }
     return positionsToUpdate;

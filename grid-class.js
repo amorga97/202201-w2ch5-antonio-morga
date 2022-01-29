@@ -1,12 +1,11 @@
 export class Grid {
     constructor(size) {
-        this.grid = [];
-        this.row = [];
+        this.array = [];
         for (let i = 0; i < size; i += 1) {
-            this.row.push(0);
-        }
-        for (let i = 0; i < size; i += 1) {
-            this.grid.push(this.row);
+            this.array[i] = [];
+            for (let j = 0; j < size; j += 1) {
+                this.array[i].push(0);
+            }
         }
     }
 }

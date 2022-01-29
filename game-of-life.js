@@ -3,19 +3,21 @@ import { obtainNeighbors } from './assign-neighbors.js';
 import { findDeadCells } from './find-dead-cells.js';
 import { updateGrid } from './update-grid.js';
 
-let grid = [
-    [0, 0, 0, 0, 0],
-    [0, 0, 1, 0, 0],
-    [0, 0, 1, 0, 0],
-    [0, 0, 1, 0, 0],
-    [0, 0, 0, 0, 0],
-];
+let grid = {
+    array: [
+        [0, 0, 0, 0, 0],
+        [0, 0, 1, 0, 0],
+        [0, 0, 1, 0, 0],
+        [0, 0, 1, 0, 0],
+        [0, 0, 0, 0, 0],
+    ],
+};
 
-let livingCellsArray = liveCells(grid);
-let deadCellsArray = findDeadCells(grid);
+let livingCellsArray = liveCells(grid.array);
+let deadCellsArray = findDeadCells(grid.array);
 livingCellsArray = obtainNeighbors(livingCellsArray);
-deadCellsArray = obtainNeighbors(livingCellsArray, deadCellsArray);
+deadCellsArray = obtainNeighbors(
+    liveCells(grid.array),
+    findDeadCells(grid.array)
+);
 grid = updateGrid(livingCellsArray, deadCellsArray);
-
-console.log('living cells', livingCellsArray);
-console.log('dead cells', deadCellsArray);

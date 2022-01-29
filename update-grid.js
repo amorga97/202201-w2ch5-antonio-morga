@@ -1,10 +1,28 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-undef */
-/* eslint-disable prefer-const */
 import { Grid } from './grid-class.js';
+import { actOnAliveCells } from './act-on-alive-cells.js';
+import { actOnDeadCells } from './act-on-dead-cells.js';
 
 export const updateGrid = (aliveCellsArray, deadCellsArray) => {
-    let grid = new Grid();
-    actOnAliveCells(aliveCellsArray);
-    actOnDeadCells(deadCellsArray);
+    const grid = new Grid(5);
+    const updatedPostions = [];
+    const positionsToUpdate = [
+        ...actOnAliveCells(aliveCellsArray),
+        ...actOnDeadCells(deadCellsArray),
+    ];
+    for (let i = 0; i < positionsToUpdate.length; i += 1) {
+        if (positionsToUpdate[i].isAlive === true) {
+            updatedPostions.push(positionsToUpdate[i]);
+            updatedPostions[i].isAlive = false;
+        } else {
+            updatedPostions.push(positionsToUpdate[i]);
+            updatedPostions[i].isAlive = true;
+        }
+    }
+    updatedPostions.forEach((element) => {
+        grid.array[element.row][element.column] = Number(element.isAlive);
+    });
+    aliveCellsArray.forEach((element) => {
+        grid.array[element.row][element.column] = Number(element.isAlive);
+    });
+    return grid;
 };

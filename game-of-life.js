@@ -4,5 +4,5 @@ import { nextGen } from './functions/next-generation.js';
 export const gridSize = 6;
 let grid = new Grid(gridSize);
 
-grid = nextGen(testGrid1);
+grid = nextGen(grid);
 console.log(grid);

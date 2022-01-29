@@ -21,14 +21,3 @@ deadCellsArray = obtainNeighbors(
     findDeadCells(grid.array)
 );
 grid = updateGrid(livingCellsArray, deadCellsArray);
-console.log(grid.array);
-
-livingCellsArray = liveCells(grid.array);
-deadCellsArray = findDeadCells(grid.array);
-livingCellsArray = obtainNeighbors(livingCellsArray);
-deadCellsArray = obtainNeighbors(
-    liveCells(grid.array),
-    findDeadCells(grid.array)
-);
-grid = updateGrid(livingCellsArray, deadCellsArray);
-console.log(grid.array);

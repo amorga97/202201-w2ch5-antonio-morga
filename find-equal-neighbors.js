@@ -2,8 +2,8 @@ import { checkColumns } from './check-columns.js';
 import { checkRows } from './check-rows.js';
 import { checkDiagonal } from './check-diagonal.js';
 
-export const obtainNeighbors = (livingCells) => {
-    const cellsAndNeighbors = [...livingCells];
+export const findEqualNeighbors = (array) => {
+    const cellsAndNeighbors = [...array];
     for (let i = 0; i < cellsAndNeighbors.length - 1; i += 1) {
         if (checkRows(cellsAndNeighbors[i], cellsAndNeighbors[i + 1])) {
             cellsAndNeighbors[i].neighbors += 1;

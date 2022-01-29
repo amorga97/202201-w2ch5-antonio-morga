@@ -1,5 +1,4 @@
-import { findAliveNeighbors } from './find-alive-neighbors.js';
-import { findEqualNeighbors } from './find-equal-neighbors.js';
+import { findEqualNeighbors, findAliveNeighbors } from './find-neighbors.js';
 
 export const obtainNeighbors = (livingCells, deadCells) => {
     let assignedNeighbors = [];

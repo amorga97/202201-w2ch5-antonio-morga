@@ -1,9 +1,7 @@
-import { Grid } from './grid-class.js';
-import { actOnAliveCells } from './act-on-alive-cells.js';
-import { actOnDeadCells } from './act-on-dead-cells.js';
+import { actOnAliveCells, actOnDeadCells } from './act-on-cells.js';
 
-export const updateGrid = (aliveCellsArray, deadCellsArray) => {
-    const grid = new Grid(5);
+export const updateGrid = (aliveCellsArray, deadCellsArray, currentgrid) => {
+    const grid = currentgrid;
     const updatedPostions = [];
     const positionsToUpdate = [
         ...actOnAliveCells(aliveCellsArray),

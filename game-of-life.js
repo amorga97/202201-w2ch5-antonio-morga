@@ -1,6 +1,7 @@
 import { liveCells } from './find-alive-cells.js';
 import { obtainNeighbors } from './assign-neighbors.js';
 import { findDeadCells } from './find-dead-cells.js';
+import { updateGrid } from './update-grid.js';
 
 let grid = [
     [0, 0, 0, 0, 0],

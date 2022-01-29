@@ -1,7 +1,8 @@
 import { liveCells } from './find-alive-cells.js';
-import { obtainNeighbors } from './obtain-neighbors.js';
+import { obtainNeighbors } from './assign-neighbors.js';
+import { findDeadCells } from './find-dead-cells.js';
 
-const grid = [
+let grid = [
     [0, 0, 0, 0, 0],
     [0, 0, 1, 0, 0],
     [0, 0, 1, 0, 0],
@@ -9,7 +10,11 @@ const grid = [
     [0, 0, 0, 0, 0],
 ];
 
-const livingCellsArray = liveCells(grid);
-const neighbourCells = obtainNeighbors(livingCellsArray);
+let livingCellsArray = liveCells(grid);
+let deadCellsArray = findDeadCells(grid);
+livingCellsArray = obtainNeighbors(livingCellsArray);
+deadCellsArray = obtainNeighbors(livingCellsArray, deadCellsArray);
+grid = updateGrid(livingCellsArray, deadCellsArray);
 
-console.log(neighbourCells);
+console.log('living cells', livingCellsArray);
+console.log('dead cells', deadCellsArray);

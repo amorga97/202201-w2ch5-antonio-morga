@@ -129,6 +129,9 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-#sonarqube
+# sonarqube
 .scannerwork/
 sonar-project.properties
+
+# test files
+./functions/tests

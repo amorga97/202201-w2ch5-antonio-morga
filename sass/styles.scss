@@ -74,6 +74,7 @@ body {
 
 .fa-play,
 .fa-stop,
+.fa-random,
 .fa-redo-alt {
     color: #28e425;
     font-size: 2rem;
@@ -245,13 +246,19 @@ input[type=range]::-webkit-slider-runnable-track {
 @media (min-width: 850px) {
     .fa-play,
     .fa-stop,
+    .fa-random,
     .fa-redo-alt {
         color: #28e425;
         font-size: 3rem;
+        transform: translateY(5vh);
     }
 
     .controls-right {
         transform: translateX(3vw);
+
+        &__label {
+            transform: translateY(-4vh);
+        }
     }
 
     .grid-box {

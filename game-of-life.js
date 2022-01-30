@@ -56,8 +56,8 @@ resetButton.addEventListener('click', () => {
     let grid = new Grid(gridSize);
     grid = nextGen(grid);
     updateHtml(grid);
-    document.querySelector('.fa-play').classList.toggle('hidden');
-    document.querySelector('.fa-stop').classList.toggle('hidden');
+    document.querySelector('.fa-play').classList.remove('hidden');
+    document.querySelector('.fa-stop').classList.add('hidden');
     clearInterval(run);
     run = false;
 });

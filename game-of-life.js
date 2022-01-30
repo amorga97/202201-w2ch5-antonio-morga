@@ -68,7 +68,7 @@ startStop.addEventListener('click', () => {
         document.querySelector('.fa-play').classList.toggle('hidden');
         document.querySelector('.fa-stop').classList.toggle('hidden');
         run = window.setInterval(() => {
-            let grid = captureHtmlGrid(cells);
+            let grid = captureHtmlGrid();
             grid = nextGen(grid);
             updateHtml(grid);
         }, 500 - newGenSpeed);

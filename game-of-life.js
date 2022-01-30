@@ -1,7 +1,7 @@
 import { Grid } from './functions/class-grid.js';
 import { nextGen } from './functions/next-generation.js';
 
-let gridSize = document.querySelector('.controls-left__grid-size').value;
+const gridSize = 20;
 const resetButton = document.querySelector('.controls-left__reset');
 const gridBox = document.querySelector('.grid-box');
 const cells = document.querySelectorAll('.grid-box__cell');
@@ -24,12 +24,6 @@ const generateGrid = (size) => {
 };
 
 generateGrid(gridSize);
-
-resetButton.addEventListener('click', () => {
-    console.log('hola');
-    gridSize = document.querySelector('.controls-left__grid-size').value;
-    generateGrid(gridSize);
-});
 
 const captureHtmlGrid = () => {
     const grid = new Grid(gridSize);
@@ -58,15 +52,29 @@ const updateHtml = (grid) => {
 
 let run = false;
 
+resetButton.addEventListener('click', () => {
+    let grid = new Grid(gridSize);
+    grid = nextGen(grid);
+    updateHtml(grid);
+    document.querySelector('.fa-play').classList.toggle('hidden');
+    document.querySelector('.fa-stop').classList.toggle('hidden');
+    clearInterval(run);
+    run = false;
+});
+
 startStop.addEventListener('click', () => {
-    newGenSpeed = document.querySelector('.controls-right__speed').value;
     if (!run) {
+        newGenSpeed = document.querySelector('.controls-right__speed').value;
+        document.querySelector('.fa-play').classList.toggle('hidden');
+        document.querySelector('.fa-stop').classList.toggle('hidden');
         run = window.setInterval(() => {
             let grid = captureHtmlGrid(cells);
             grid = nextGen(grid);
             updateHtml(grid);
         }, 500 - newGenSpeed);
     } else {
+        document.querySelector('.fa-play').classList.toggle('hidden');
+        document.querySelector('.fa-stop').classList.toggle('hidden');
         clearInterval(run);
         run = false;
     }

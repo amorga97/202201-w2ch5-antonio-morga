@@ -10,29 +10,28 @@
         />
         <title>Game of life</title>
 
+        <script
+            src="https://kit.fontawesome.com/11c3f23555.js"
+            crossorigin="anonymous"
+        ></script>
+
         <script type="module" src="./functions/class-grid.js"></script>
         <link ty rel="stylesheet" href="./css/styles.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;700&display=swap"
+            rel="stylesheet"
+        />
     </head>
     <body>
         <header class="header">
             <h1 class="page-title">John Conway's Game Of Life</h1>
         </header>
         <main class="main">
-            <div class="controls-right">
-                <input
-                    class="controls-left__grid-size"
-                    type="range"
-                    min="10"
-                    max="40"
-                    value="20"
-                    step="10"
-                    name=""
-                    id=""
-                />
-                <button class="controls-left__reset">Reset</button>
-            </div>
             <div class="grid-box"></div>
             <div class="controls-right">
+                <label class="controls-right__label" for="speed">Speed</label>
                 <input
                     class="controls-right__speed"
                     type="range"
@@ -41,14 +40,62 @@
                     step="50"
                     max="450"
                     name=""
-                    id=""
+                    id="speed"
                 />
-                <button class="controls-right__start-stop">Start/Stop</button>
+                <button class="controls-right__start-stop">
+                    <i class="fas fa-play"></i>
+                    <i class="fas fa-stop hidden"></i>
+                </button>
+                <button class="controls-left__reset">
+                    <i class="fas fa-redo-alt"></i>
+                </button>
             </div>
         </main>
         <footer class="footer">
             <h2 class="author">Made by Toño</h2>
         </footer>
+        <div class="particle-container">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
         <script type="module" src="./game-of-life.js"></script>
     </body>
 </html>

@@ -10,8 +10,7 @@ body {
     font-family: 'chakra petch', sans-serif;
     color: #28e425;
     background-color: black;
-    @include mixins.flex();
-    flex-direction: column;
+    @include mixins.flex(column);
     width: 100%;
 }
 
@@ -93,12 +92,9 @@ button {
 
 .main {
     z-index: 1;
-    @include mixins.flex();
-    flex-direction: column;
+    @include mixins.flex(column);
     height: 70vh;
     width: 100%;
-    justify-content: center;
-    align-items: center;
 
     & .controls-right {
         @include mixins.flex();
@@ -171,7 +167,6 @@ input[type=range]::-webkit-slider-thumb {
 }
 /* prettier-ignore */
 input[type=range]::-webkit-slider-runnable-track {
-    background: #205928;
     width: 100%;
     height: 4px;
     cursor: pointer;

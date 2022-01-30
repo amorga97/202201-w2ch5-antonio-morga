@@ -1,4 +1,8 @@
-import { checkColumns, checkRows, checkDiagonal } from '../check-directions.js';
+import {
+    checkColumns,
+    checkRows,
+    checkDiagonal,
+} from '../functions/check-directions.js';
 
 const cell1 = {
     row: 2,

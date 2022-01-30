@@ -1,4 +1,7 @@
-import { findAliveNeighbors, findEqualNeighbors } from './find-neighbors';
+import {
+    findAliveNeighbors,
+    findEqualNeighbors,
+} from '../functions/find-neighbors.js';
 
 const aliveArray1 = [
     { row: 1, column: 2, isAlive: true, neighbors: 0 },

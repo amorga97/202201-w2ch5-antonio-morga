@@ -94,7 +94,7 @@ button {
 .main {
     z-index: 1;
     @include mixins.flex(column);
-    height: 80vh;
+    height: 70vh;
     width: 100%;
 
     & .controls-right {
@@ -145,6 +145,11 @@ button {
 .controls-right {
     @include mixins.flex();
     flex-wrap: wrap;
+}
+
+.footer {
+    width: 100%;
+    height: 10vh;
 }
 
 /* prettier-ignore */

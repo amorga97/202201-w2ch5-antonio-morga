@@ -3,6 +3,7 @@ import { nextGen } from './functions/next-generation.js';
 
 const gridSize = 20;
 const resetButton = document.querySelector('.controls-left__reset');
+const randomizeButton = document.querySelector('.controls-left__randomize');
 const gridBox = document.querySelector('.grid-box');
 const startStop = document.querySelector('.controls-right__start-stop');
 let newGenSpeed = document.querySelector('.controls-right__speed').value;
@@ -49,11 +50,30 @@ const updateHtml = (grid) => {
     }
 };
 
+const randomize = (grid) => {
+    const array = grid;
+    for (let i = 0; i < array.array.length; i += 1) {
+        for (let j = 0; j < array.array[i].length; j += 1) {
+            array.array[i][j] = Math.round(Math.random());
+        }
+    }
+    return array;
+};
+
 let run = false;
 
 resetButton.addEventListener('click', () => {
+    const grid = new Grid(gridSize);
+    updateHtml(grid);
+    document.querySelector('.fa-play').classList.remove('hidden');
+    document.querySelector('.fa-stop').classList.add('hidden');
+    clearInterval(run);
+    run = false;
+});
+
+randomizeButton.addEventListener('click', () => {
     let grid = new Grid(gridSize);
-    grid = nextGen(grid);
+    grid = randomize(grid);
     updateHtml(grid);
     document.querySelector('.fa-play').classList.remove('hidden');
     document.querySelector('.fa-stop').classList.add('hidden');

@@ -4,7 +4,6 @@ import { nextGen } from './functions/next-generation.js';
 const gridSize = 20;
 const resetButton = document.querySelector('.controls-left__reset');
 const gridBox = document.querySelector('.grid-box');
-const cells = document.querySelectorAll('.grid-box__cell');
 const startStop = document.querySelector('.controls-right__start-stop');
 let newGenSpeed = document.querySelector('.controls-right__speed').value;
 

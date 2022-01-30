@@ -94,7 +94,7 @@ button {
 .main {
     z-index: 1;
     @include mixins.flex(column);
-    height: 70vh;
+    height: 80vh;
     width: 100%;
 
     & .controls-right {
@@ -175,13 +175,6 @@ input[type=range]::-webkit-slider-runnable-track {
     background: #205928;
     border-radius: 1px;
     border: 0px solid #18D501;
-}
-
-.footer {
-    height: 10vh;
-    font-weight: 100;
-    @include mixins.flex();
-    text-align: center;
 }
 
 @media (min-width: 410px) {

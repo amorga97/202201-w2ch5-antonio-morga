@@ -1,4 +1,4 @@
-import { findAliveCells, findDeadCells } from './find-cells.js';
+import { findAliveCells, findDeadCells } from '../functions/find-cells.js';
 
 const testgrid1 = [
     [0, 0, 0, 0, 0],

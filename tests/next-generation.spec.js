@@ -1,4 +1,4 @@
-import { nextGen } from './next-generation.js';
+import { nextGen } from '../functions/next-generation.js';
 
 const testGrid1 = {
     array: [

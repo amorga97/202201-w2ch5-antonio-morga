@@ -5,7 +5,7 @@ import { updateGrid } from './update-grid.js';
 export const nextGen = (grid) => {
     const livingCellsArray = obtainNeighbors(findAliveCells(grid.array));
     const deadCellsArray = obtainNeighbors(
-        findAliveCells(grid.array),
+        livingCellsArray,
         findDeadCells(grid.array)
     );
     return updateGrid(livingCellsArray, deadCellsArray, grid);
